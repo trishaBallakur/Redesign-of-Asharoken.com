@@ -1,0 +1,367 @@
+
+<!doctype html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
+            grid-template-rows: auto 0px auto auto auto auto 50px;
+            font-family: sans-serif, Gothic, AppleGothic;
+            background-color: #f0efe4;
+        }
+
+        .title {
+            font-size: 2em;
+            font-family: 'Times New Roman';
+            margin: 30px;
+            margin-bottom: 0;
+            color: #FCFCFC;
+        }
+
+        nav {
+            grid-column: 1 / 6;
+            grid-row: 1;
+            font-size: 1.25em;
+            background-image: url("sky-pano.jpg");
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 30px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav li {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin: 8px;
+            text-decoration: none;
+            background-color: #78aaff55;
+            border-radius: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btext {
+            background-color: #b0c7ad;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+        }
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .calendar-image {
+            background-image: url("calendar.png");
+            width: 100px;
+            height: 100px;
+        }
+
+        .calendar-image:hover {
+            background-image: url("calendar-grey.png");
+        }
+
+        .block1 {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        .block2 {
+            grid-column: 3;
+            grid-row: 3;
+        }
+
+        .block3 {
+            grid-column: 4;
+            grid-row: 3;
+        }
+
+        .block4 {
+            grid-column: 2;
+            grid-row: 4;
+        }
+
+        .block5 {
+            grid-column: 3;
+            grid-row: 4;
+        }
+
+        .block6 {
+            grid-column: 4;
+            grid-row: 4;
+        }
+
+        .block7 {
+            grid-column: 2 / 4;
+            grid-row: 5 / 7;
+        }
+
+        .block8 {
+            grid-column: 4;
+            grid-row: 5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .block9 {
+            grid-column: 4;
+            grid-row: 6;
+        }
+
+        footer {
+            background-image: url("sky-pano.jpg");
+            color: white;
+            grid-column: 1 / 6;
+            grid-row: 7;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (min-width: 1500px) {
+            body {
+                grid-template-columns: 1fr 395px 395px 395px 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                grid-template-columns: 0.05fr 1fr 0.05fr;
+                grid-template-rows: auto repeat(10, auto) 50px;
+            }
+
+            .title {
+                font-size: 2em;
+                //font-family: ;
+                margin: 30px;
+                margin-bottom: 25px;
+                color: #FCFCFC;
+            }
+
+            nav {
+                grid-column: 1 / 4;
+                grid-row: 1;
+                font-size: 1em;
+                background-image: url("sky-pano.jpg");
+                //box-shadow: 0px 5px 5px grey;
+            }
+
+            nav ul {
+                list-style-type: none;
+                margin: 30px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            nav li {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 8px;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin: 8px;
+                text-decoration: none;
+                background-color: #78aaff55;
+                border-radius: 8px;
+            }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btext {
+            background-color: #accbff;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+        }
+
+            .block1 {
+                grid-column: 2;
+                grid-row: 3;
+            }
+
+            .block2 {
+                grid-column: 2;
+                grid-row: 4;
+            }
+
+            .block3 {
+                grid-column: 2;
+                grid-row: 5;
+            }
+
+            .block4 {
+                grid-column: 2;
+                grid-row: 6;
+            }
+
+            .block5 {
+                grid-column: 2;
+                grid-row: 7;
+            }
+
+            .block6 {
+                grid-column: 2;
+                grid-row: 8;
+            }
+
+            .block7 {
+                grid-column: 2;
+                grid-row: 10;
+            }
+
+            .block8 {
+                grid-column: 2;
+                grid-row: 9;
+            }
+
+            .block9 {
+                grid-column: 2;
+                grid-row: 11;
+            }
+
+            footer {
+                grid-column: 1 / 4;
+                grid-row: 12;
+            }
+        }
+    </style>
+</head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <nav>
+        <h1 class="title"><a href="redesign.html">Village of Asharoken</a></h1>
+        <ul>
+            <li><a href="error.jpg">Spirit</a></li>
+            <li><a href="error.jpg">Bulletin</a></li>
+            <li><a href="error.jpg">Resources</a></li>
+            <li><a href="error.jpg">News</a></li>
+            <li><a href="error.jpg">Government</a></li>
+            <li><a href="error.jpg">Info</a></li>
+            <li><a href="redesign.html">Home</a></li>
+        </ul>
+    </nav>
+    <div class="block1 center-content btext">
+        Welcome to the Village of Asharoken. We are located on the North Shore of Long Island in
+        western Suffolk County, New York. We may be a village few in number, but our big hears make
+        us a metropolis in size. That's the spirit of volunteerism, the Asharoken Spirit.
+    </div>
+    <div class="block2 center-content btext">
+        <div><b>Asharoken Village Hall:</b></div>
+        <br />
+        <div>1 Asharoken Avenue</div>
+        <div>Asharoken, NY 11768</div>
+        <br />
+        <div><b>Village Hall:</b> (631) 261-7098</div>
+        <br />
+        <div><b>Police:</b> (631) 261-7400<br /></div>
+        <div><b>Fire/Ambulance:</b> (631) 757-1111</div>
+    </div>
+    <div class="block3 center-content btext">
+        <div><b>Trustee Meetings and Minutes:</b></div>
+        <br />
+        <div>The next meeting of the Board of Trustees will be on November 12 at 6:30pm.</div>
+        <br />
+        <div>
+            The previous meeting was on October 1st.
+            <a href="error.jpg">Read the draft agenda from that meeting.</a>
+        </div>
+    </div>
+    <div class="block4 center-content btext">
+        <b>Sanitation Schedule:</b><br />
+        <a href="error.jpg">
+            <div class="calendar-image"></div>
+        </a>
+    </div>
+    <div class="block5 center-content btext">
+        <div><b>Announcements:</b></div>
+        <br />
+        <div>Village Hall offices will be closed Monday, October 14.</div>
+        <br />
+        <div>The next Zoning Board Hearing will be Monday, October 28 at 7:30pm.</div>
+        <br />
+        <div>The Asharoken Holiday Party will be held Saturday, November 9.</div>
+    </div>
+    <div class="block6 center-content btext">
+        <div><b>Asharoken, NY:</b></div>
+        <script type='text/javascript' src='https://darksky.net/widget/default-small/40.9327,-73.3733/us12/en.js?width=100%&height80&title=Full Forecast&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Times New Roman&customFont=&units=us'></script>
+    </div>
+    <div class="block7 center-content btext">
+        <b>Messages from Asharoken Mayor Gregory D. Letica:</b>
+        <br /><br />
+        October 8, 2019 <br /><br />
+        I would like to wish everyone observing Yom Kippur good yontif and an easy fast.
+        <br /><br /><br />
+
+        October 3, 2019<br /><br />
+        Based on very strong support from the residents of Asharoken for continuing in-house
+        sanitation, a lack of support for outside carting, and the relatively small savings
+        that would have been generated by switching to outside carting, the Board of Trustees
+        voted unanimously at the October 1 meeting to reject all five bids that it received from
+        carting companies. In the long run there will be changes to how Asharoken handles its
+        garbage, but it was clear from the input of residents that this was not the appropriate
+        time to consider a change.<br /><br />
+        The Village did benefit from the bidding process for outside carting. It now has a
+        complete bid package ready to be used at any time in the future. We learned a lot
+        about how other villages handle their trash, and now have a good idea on costs for
+        outside carting.<br /><br />
+        I want to close by saying how much gratitude and appreciation I have for the dedication
+        and hard work that Barry Bradley has done for the last 40 years. This sentiment was
+        echoed by many residents who sent emails in his support. We are so lucky to have had
+        Barry serve the Village for 40 years and it is nice to know that his smiling face will
+        still be there to greet us when he picks up the trash. He is truly one of a kind.
+        Thank you Barry!
+        <br /><br /><br />
+
+        September 23, 2017<br /><br />
+        On September 23, Asharoken sponsored its 8th annual Coastal Cleanup in conjunction with the
+        American Littoral Society and the International Ocean Conservancy. Approximately 200 dedicated
+        trash warriors showed up to clean up all the debri found on our local shores. Village residents
+        and local residents alike took part. Students from local Northport schools and many scouts
+        came out in force to make a statement about the harm trash causes to our waters and marine
+        life.<br /><br />
+
+        The cleanup committee wants to thank The Town of Huntington for donating the dumpster.
+        Thank you also to Mayor Letica, Village Clerk Rittenhouse, Deputy Mayor Pierce and resident
+        Tracy Aboff for all stepping up to the task of helping out.<br /><br /><br />
+    </div>
+    <div class="block8 center-content btext">
+        <img src="family.jpg" alt="Happy family">
+    </div>
+    <div class="block9 center-content btext">
+        <a class="twitter-timeline" data-height="500" data-theme="light" href="https://twitter.com/Asharoken?ref_src=twsrc%5Etfw">Tweets by Asharoken</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <footer>
+        * Not endorsed by the Village of Asharoken.
+    </footer>
+</body>
+</html>
